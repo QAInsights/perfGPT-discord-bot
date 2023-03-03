@@ -22,6 +22,12 @@ Run your own ChatGPT in Discord.
 git clone https://github.com/QAInsights/perfGPT-discord-bot.git
 ```
 
+* Install `requirements.txt`
+
+```bash
+pip3 install -r requirements.txt
+```
+
 * Create `.env` in the root with the following variables
 ```bash
 DISCORD_TOKEN=XXXX.YYYY.ZZZZ

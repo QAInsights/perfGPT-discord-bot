@@ -20,7 +20,7 @@ def ask_openai(user_input=None, previous_conversation_response=None):
         openai_response = openai.ChatCompletion.create(
                 model=constants.openai_model,
                 messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "system", "content": f"{constants.initial_conversation}"},
                     {"role": "assistant", "content": f"{last_response}"},
                     {"role": "user", "content": f"{user_input}"},
                 ]

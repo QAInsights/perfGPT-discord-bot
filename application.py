@@ -42,9 +42,19 @@ async def on_message(message):
 
     response = ask_openai(user_input=user_input,
                           previous_conversation_response=previous_conversation_response)
-    logging.info(response[1])
 
     pop_conversation(previous_conversation_response)
+
+    emoji = discord.utils.get(message.guild.emojis, name=constants.emoji_name)
+
+    if emoji:
+        await message.add_reaction(emoji)
+    else:
+        emoji = "✅"
+        await message.add_reaction(emoji)
+
     await message.channel.send(str(response[0]))
+    await message.remove_reaction(emoji, client.user)
+
 
 client.run(token)

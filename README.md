@@ -13,7 +13,7 @@ Run your own ChatGPT in Discord.
 * Discord Guild
 * Discord bot with appropriate permissions
 * OpenAI API key
-* ☕ or 🍵
+* ☕ or 🍵 
 
 # 🪜 Steps
 

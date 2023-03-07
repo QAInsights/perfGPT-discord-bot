@@ -15,7 +15,7 @@ def ask_openai(user_input=None, previous_conversation_response=None):
     """
     last_response = previous_conversation_response[-1]
     try:
-        openai.api_key = get_secret('OPENAI_API_KEY')
+        openai.api_key = get_secret(constants.OPENAI_API_KEY)
 
         openai_response = openai.ChatCompletion.create(
                 model=constants.openai_model,

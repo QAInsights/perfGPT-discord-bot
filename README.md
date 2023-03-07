@@ -13,11 +13,12 @@ Run your own ChatGPT in Discord.
 * Discord Guild
 * Discord bot with appropriate permissions
 * OpenAI API key
+* AWS Secrets
 * ☕ or 🍵 
 
 # 🪜 Steps
 
-* Clone this repo
+* Clone this repo in EC2
 ```
 git clone https://github.com/QAInsights/perfGPT-discord-bot.git
 ```
@@ -28,16 +29,18 @@ git clone https://github.com/QAInsights/perfGPT-discord-bot.git
 pip3 install -r requirements.txt
 ```
 
-* Create `.env` in the root with the following variables
+* Create AWS Secrets and store the below keys.
 ```bash
 DISCORD_TOKEN=XXXX.YYYY.ZZZZ
-DISCORD_GUILD=ABCDE
 OPENAI_API_KEY=QQ-NNNN
 ```
+* To read secrets, appropriate IAM role must be added to the EC2 instance.
 
-* Run it
+* Start and run it in background
+
 ```bash
-python3 application.py
+chmod +x start.sh
+./start.sh
 ```
 
 ![PerfGPT-QAInsights-Discord-Bot-Response](./images/PerfGPT-Discord-QAInsights.png)

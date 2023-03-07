@@ -11,8 +11,8 @@ from utils import pop_conversation
 load_dotenv()
 logging.basicConfig(level=logging.INFO)
 
-token = get_secret('DISCORD_TOKEN')
-my_guild = constants.DISCORD_GUILD
+token = get_secret(constants.DISCORD_TOKEN)
+my_guild = constants.discord_guild
 
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)

@@ -1,17 +1,18 @@
-import os
 import logging
-import discord
-import constants
 
+import discord
 from dotenv import load_dotenv
+
+import constants
 from openai_engine import ask_openai
+from utils import get_secret
 from utils import pop_conversation
 
 load_dotenv()
 logging.basicConfig(level=logging.INFO)
 
-token = os.getenv("DISCORD_TOKEN")
-my_guild = os.getenv("DISCORD_GUILD")
+token = get_secret('DISCORD_TOKEN')
+my_guild = constants.DISCORD_GUILD
 
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
